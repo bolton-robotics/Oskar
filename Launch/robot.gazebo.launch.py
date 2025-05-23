@@ -46,7 +46,7 @@ def generate_launch_description():
                     launch_arguments={'extra_gazebo_args': '--ros-args --params-file ' + gazebo_params_file}.items()
              )
 
-    # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
+    # Run the spawner node from the gazebo_ros package. 
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'my_bot'],
@@ -66,7 +66,7 @@ def generate_launch_description():
     )
 
 
-    # Launch them all!
+    # Launch statement
     return LaunchDescription([
         rsp,
         joystick,
