@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="oskar">
+    
+    <!-- Camera Description -->
+    
+    <link name="camera_link">
+        <visual>
+            <geometry>
+                <box size="0.025 0.03 0.03"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.025 0.03 0.03"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </collision>
+        <xacro:default_inertial mass="${camera_mass}"/>
+    </link>
+
+    <joint name="base_camera_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="camera_link"/>
+        <origin xyz="0.145 0 0.05" rpy="0 0 0"/>
+    </joint>
+
+    <link name="camera_lens_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.0025" length="0.003"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 ${pi/2} 0" />
+            <material name="black"/>
+        </visual>
+        <collision>
+             <geometry>
+                <cylinder radius="0.0025" length="0.003"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 ${pi/2} 0" />           
+        </collision>
+    </link>
+
+    <joint name="camera_camera_lens_joint" type="fixed">
+        <parent link="camera_link"/>
+        <child link="camera_lens_link"/>
+        <origin xyz="0.0125 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="camera_optical_joint" type="fixed">
+        <parent link="camera_lens_link" />
+        <child link="camera_link_optical" />
+        <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}" />
+    </joint>
+
+    <link name="camera_link_optical"></link>
+
+</robot>
