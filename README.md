@@ -6,13 +6,13 @@ This is not designed to be perfect, merely to demonstrate that it is possible to
 
 <ins>Pre-requisites</ins>
 
-8Gb AMD dual core processor
-Linux Mint 22.3
-ROS2 Jazzy
-Gazebo Jetty
-Latest VSCode
-Familiarity with ROS2, XML, Python and C
-Lots and lots of patience
+- 8Gb AMD dual core processor
+- Linux Mint 22.3
+- ROS2 Jazzy
+- Gazebo Jetty
+- Latest VSCode
+- Familiarity with ROS2, XML, Python and C
+- Lots and lots of patience
 
 <ins>Section 1 - Basic Robot Model</ins>
 
