@@ -34,7 +34,7 @@ After running _ros2con.robot.launch.xml_, set the frame to odom and use teleop_t
 
 <ins>Section 5 - Gazebo Robot Model</ins>
 
-Uses _gazebo.robot.urdf.xacro_ to set gazebo parameters, and _gazebo.robot.launch.xml_ to launch both Gazebo and RViz.  Note that the Rviz configuarion needs LaserScan (/scan topic) and Image (camera/image_raw) visuals adding.  The robot can be controlled with either teleop_twist_keyboard (no remapping), or the joystick via joystick.launch.py.  Both send /cmd_vel messages and this simulation does not use gz_ros2_control.  Also, sim_time is true in Gazebo.
+Uses _gazebo.robot.urdf.xacro_ to set gazebo parameters, and _gazebo.robot.launch.xml_ to launch both Gazebo and RViz.  Note that the Rviz configuarion needs LaserScan (/scan topic) and Image (camera/image_raw) visuals adding.  The robot can be controlled with either teleop_twist_keyboard (no remapping), or the joystick via _joystick.launch.py_.  Both send /cmd_vel messages and this simulation does not use gz_ros2_control.  Also, sim_time is true in Gazebo.
 
 <ins>Limitations</ins>
 
