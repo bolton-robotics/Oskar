@@ -1,8 +1,8 @@
 **Oskar Robot Simulation**
 
-This simulation is designed to take someone through the stages of visualising a robot with a simple one file URDF to a mobile representation in Gazebo with camera and lidar.  It is designed to be followed in sections which build complexity on the previous section and add new features.
+This simulation is designed to take someone through the stages of visualising a robot from a simple one file URDF to a mobile representation in Gazebo with camera and lidar.  It is designed to be followed in sections which build complexity on the previous section and add new features.
 
-This is not designed to be perfect, merely to demonstrate that it is possible to create a robot simulation that can be manipulated, and template code for use with real robots.  It is not designed to favour one tool or one method over another, merely to demonstrate the possibilities.  Other tavailable utorials go into far more depth.
+This is not designed to be perfect, merely to demonstrate that it is possible to create a robot simulation that can be manipulated, and template code for use with real robots.  It is not designed to favour one tool or one method over another, merely to demonstrate the possibilities.  Other available tutorials go into far more depth.
 
 <ins>Pre-requisites</ins>
 
@@ -30,11 +30,11 @@ Uses _rviz.robot.urdf.xacro_ adds xacro include files for macros, and breaks out
 
 Uses _ros2con.robot.urdf.xacro_ to incorporate information as well as loading a yaml file for the controllers. This also incorporates a mesh file.  This is probably the most useful of the sections, as ros2_control is how real physical robots will communicate and receive velocity and pose information to actually move in their environments.
 
-After running ros2con.robot.launch.xml, set the frame to odom and use teleop_twist_keyboard (cmd_vel needs remapping to diff_drive/cmd_vel) to move the robot in RViz.
+After running _ros2con.robot.launch.xml_, set the frame to odom and use teleop_twist_keyboard (cmd_vel needs remapping to diff_drive/cmd_vel) to move the robot in RViz.
 
 <ins>Section 5 - Gazebo Robot Model</ins>
 
-Uses _gazebo.robot.urdf.xacro_ to set gazebo parameters, and gazebo.robot.launch.xml to launch both Gazebo and RViz.  Note that the Rviz configuarion needs LaserScan (/scan topic) and Image (camera/image_raw) visuals adding.  The robot can be controlled with either teleop_twist_keyboard (no remapping), or the joystick via joystick.launch.py.  Both send /cmd_vel messages and this simulation does not use gz_ros2_control.  Also, sim_time is true in Gazebo.
+Uses _gazebo.robot.urdf.xacro_ to set gazebo parameters, and _gazebo.robot.launch.xml_ to launch both Gazebo and RViz.  Note that the Rviz configuarion needs LaserScan (/scan topic) and Image (camera/image_raw) visuals adding.  The robot can be controlled with either teleop_twist_keyboard (no remapping), or the joystick via joystick.launch.py.  Both send /cmd_vel messages and this simulation does not use gz_ros2_control.  Also, sim_time is true in Gazebo.
 
 <ins>Limitations</ins>
 
